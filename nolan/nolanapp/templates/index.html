@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block body_block %}
+<div class="container-fluid">
+  <div class="p-3 mb-2 bg-secondary text-white">
+    <p class="text-center">
+      <b>Best Christopher Nolan Movie of all Time</b>      
+    </p>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Welcome {{user.username}}</strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+      <form  method="get" action="" class="d-flex" role="search">
+        <input class="form-control me-2" type="text" placeholder="Search Movie" name="Movie">
+        <button class="btn btn-outline-success" type="submit"  name="">Search</button>
+      </form>    
+ <br>
+    <div class="row ok">
+      {% for x in all %}
+      <div class="col">
+        <div class="card" style="width: 18rem">
+          <div class="text-center">
+            <img
+              src="{{x.image}}"
+              class="card-img-top"
+              class="rounded"
+              alt="oops"
+            />
+          </div>
+          <div class="card-body">
+            <h6 class="text-danger" class="card-title">
+              {{x.rating}} <i class="fa-solid fa-star"></i>
+            </h6>
+            <h5 class="text-info" class="card-title">
+              {{x.name}} <i class="fa-solid fa-video"></i>
+            </h5>
+            <p class="text-secondary" class="card-text">
+              <i class="fa-solid fa-hand-point-right"></i>
+              {{x.desc | truncatechars:120}}
+            </p>
+
+            <a href="{{x.id}}" class="btn btn-outline-dark">More Info</a>
+            <a href="/update/{{x.id}}" class="btn btn-outline-warning"
+              >Update</a>
+            <a href="/delete/{{x.id}}" class="btn btn-outline-danger">Delete</a>
+          </div>
+        </div>
+        <br />
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endblock %}
+</div>

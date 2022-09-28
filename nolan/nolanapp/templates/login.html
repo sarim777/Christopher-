@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block body_block %}
+<div class="p-3 mb-2 bg-secondary text-white">
+  <h5 class="text-center">Login Page</h5>
+</div>
+{% for m in message %} {{m}} {%endfor%}
+<div class="container">
+  <form action="." method="POST">
+    {% csrf_token %}
+    <label class="text-uppercase"
+      ><h4 class="text-info">Enter Your UserName</h4></label
+    >
+    <input
+      type="text"
+      class="form-control"
+      name="username"
+      placeholder="Enter Your Username"
+    /><br />
+    <label class="text-uppercase"
+      ><h4 class="text-info">Enter Your Password</h4></label
+    >
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      placeholder="Enter Your Password"
+    />
+    <br />
+    <div class="text-center">
+      <input class="btn btn-primary" type="Submit" name="" />
+    </div>
+  </form>
+</div>
+{% endblock %}

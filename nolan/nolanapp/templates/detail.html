@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block body_block%}
+<div class="container">
+  <img src="{{pro.image}}" alt="okk" class="img-thumbnail" width="150" />
+  <h4 class="text-light bg-dark" class="text-center">
+    Movie Name <i class="fa-solid fa-film"></i> : {{pro.name}}
+  </h4>
+  <h5 class="text-info">
+    Rating : {{pro.rating}}<i class="fa-solid fa-star"></i>
+  </h5>
+  <p class="text-primary">
+    <b>About <i class="fa-solid fa-audio-description"></i> : {{pro.desc}}</b>
+  </p>
+</div>
+
+{%endblock%}

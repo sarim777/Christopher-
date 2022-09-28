@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block body_block %}
+<div class="text-center">
+  <h3 class="text-center">ARE YOUR SURE ABOUT</h3>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="text-center">
+      <button class="btn btn-outline-danger" type="submit" click name="">
+        Delete
+      </button>
+      <button class="btn btn-outline-success" type="submit">Cancel</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
